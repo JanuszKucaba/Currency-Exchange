@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Currency Exchange</title>
+</head>
+<body>
+    <br/><br/><br/>
+    <div class="container">
+        <h1>Currency Exchange</h1>
+        <div class="data">
+            <p><b>NBP exchange date: {{ currencies_rates['date'] }}</b></p>
+            <p>1 USD = {{ currencies_rates['USD'] }} PLN</p>
+            <p>1 EUR = {{ currencies_rates['EUR'] }} PLN </p>
+            <p>1 GBP = {{ currencies_rates['GBP'] }} PLN</p>
+            <p>1 CHF = {{ currencies_rates['CHF'] }} PLN</p>
+        </div>
+        <br/>
+        <div class="exchange">
+            <form method="POST" action="/">
+                <b>Exchange</b>
+                <br/>
+                <input name="value1" value="{{ value1 }}" step="0.01" placeholder="amount">
+                <br/>
+                From: 
+                <select name="currency_from" id="currency_from">
+                    {% for item in currencies %}
+                    <option type="text">{{ item }}</option>
+                    {% endfor %}
+                </select>
+                To: 
+                <select name="currency_to" id="currency_to">
+                    {% for item in currencies %}
+                    <option type="text">{{ item }}</option>
+                    {% endfor %}
+                </select>
+                <br/>
+                {% if res == -1 %}
+                <input name="value2" value="choose other pair" disabled>
+                {% else %}
+                <input name="value2" value="{{ value }} {{ currency1 }} = {{ res }} {{ currency2 }}" disabled>
+                {% endif %}
+                <button>Exchange</button>
+            </form>         
+        </div>
+        <br/>
+    </div>
+</body>
+</html>

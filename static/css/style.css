@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../img/dollars.jpg");
+}
+
+h1 {
+    text-align: center;
+    color: red;
+}
+
+.container {
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: aquamarine;
+    overflow: auto;
+    color: green;
+    
+}
+
+.data {
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+    overflow: auto;
+    border-style: dotted;
+    padding: 10px 10px;
+    background-color: darkorange;
+}
+
+.exchange {
+    text-align: center;
+    border-radius: 10px;
+    max-width: 220px;
+    margin: 0 auto;
+    border-style: dotted;
+    padding: 5px 5px;
+    background-color: yellow;
+}
+
+button {
+    margin: auto;
+}
